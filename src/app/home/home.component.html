@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">{{data1.Count}} no of events in {{datee | date:'short'}}</h4>
+                        <ul>
+                            <li>no of normal events = {{i0}}</li>
+                            <li>no of normal events = {{i1}}</li>
+                            <li>no of normal events = {{i2}}</li>
+                            <li>no of errors = {{i3}}</li>
+                        </ul>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Host</th>
+                                    <th>Message Type</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let logData of logDatas">
+                                    <td>{{ logData.eventTime.S }}</td>
+                                    <td>{{ logData.eventclk.S }}</td>
+                                    <td>{{ logData.hostname.S }}</td>
+                                    <td>{{ logData.messageType.S }}</td>
+                                    <td>{{ logData.message.S }}</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+
+                </div>
+                <div [chart]="chart"></div>
+                <!-- <button type="submit" class="btn btn-info btn-fill pull-left" (click)="nextDateData()">Next day</button> -->
+                <!-- <button type="submit" class="btn btn-info btn-fill pull-left" (click)="preDateData()">Previous day</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+

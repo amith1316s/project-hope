@@ -1,0 +1,24 @@
+
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Host</th>
+        <th>Message Type</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let logData of logDatas">
+        <td>{{ logData.eventTime.S }}</td>
+        <td>{{ logData.eventclk.S }}</td>
+        <td>{{ logData.hostname.S }}</td>
+        <td>{{ logData.messageType.S }}</td>
+        <td>{{ logData.message.S }}</td>
+      </tr>
+    </tbody>
+    </table>
+    
+    

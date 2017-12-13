@@ -1,0 +1,46 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Setup logs</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>log type</label>
+                                        <!-- <input type="text" class="form-control" name="logType" > -->
+                                        <select id="myList" class="form-control">
+                                                <option value = "1">Syslogs</option>
+                                                <option value = "2">Apache logs</option>
+                                                <option value = "3">Bank logs</option>
+                                                <option value = "4">Cloudtrail logs</option>
+                                                <option value = "4">kjgh</option>
+                                              </select>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>From</label>
+                                        <input type="date" class="form-control" (input)='reqDate=$event.target.value'/>
+                                    </div>
+                                </div>
+                            </div>
+                            {{reqDate}}
+                            <button type="submit" class="btn btn-info btn-fill pull-right" (click)="saveChanges()">save changes</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
